@@ -1,9 +1,5 @@
+import { SectionProps } from '@/types/components'
 import { Container, Title } from './styles'
-
-interface SectionProps {
-	title: string
-	children: JSX.Element
-}
 
 export const Section = ({ title, children }: SectionProps) => {
 	return (

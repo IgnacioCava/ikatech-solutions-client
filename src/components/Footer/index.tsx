@@ -1,35 +1,8 @@
-'use client'
-
 import { constants } from '@/constants'
-import { Searchbar } from '@components'
+import { FooterSection } from '@components'
 import Image from 'next/image'
 import { facebookIcon, footerSponsors, instagramIcon } from '@assets'
-import { Email, FooterContainer, Handle, HandleText, Line, Options, Section, SectionTitle, Sections, Sponsors, Socials } from './styles'
-
-interface FooterSectionProps {
-	section: {
-		title: string
-		options: string[]
-	}
-}
-
-const FooterSection = ({ section }: FooterSectionProps) => {
-	return (
-		<Section>
-			<SectionTitle>{section.title}</SectionTitle>
-			<Options $type={section.title}>
-				{section.options.map((option) => (
-					<span key={option}>{option}</span>
-				))}
-			</Options>
-			{section.title === 'Newsletter' && (
-				<Email>
-					<Searchbar placeholder='E-MAIL' />
-				</Email>
-			)}
-		</Section>
-	)
-}
+import { FooterContainer, Handle, HandleText, Line, Sections, Sponsors, Socials } from './styles'
 
 export const Footer = () => {
 	return (

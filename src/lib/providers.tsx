@@ -1,18 +1,19 @@
 'use client'
 
-/* Core */
-import { Provider } from 'react-redux'
+import { Provider as ReduxProvider } from 'react-redux'
 import StyledComponentsRegistry from '@/styles/registry'
 import { ThemeProvider } from 'styled-components'
+import { ApolloProvider } from '@/graphql/apolloClient'
 import theme from '@/styles/theme'
-/* Instruments */
 import { reduxStore } from '@/lib/redux'
 
 export const Providers = (props: React.PropsWithChildren) => {
 	return (
 		<StyledComponentsRegistry>
 			<ThemeProvider theme={theme}>
-				<Provider store={reduxStore}>{props.children}</Provider>
+				<ApolloProvider>
+					<ReduxProvider store={reduxStore}>{props.children}</ReduxProvider>
+				</ApolloProvider>
 			</ThemeProvider>
 		</StyledComponentsRegistry>
 	)

@@ -1,64 +1,22 @@
 'use client'
 
-import { Details, ProductList, ProductOption, Section } from '@/components'
-import { useState } from 'react'
-import styled, { css } from 'styled-components'
+import { Details, ProductImages, ProductInfo, ProductList, SkeletonLoader, Spinner } from '@components'
 import { constants } from '../constants'
-import { DarkGreyText } from '@/styles/commons'
-import { AddToCart, Album, Content, Data, Guide, Imagen, Images, Info, Mini, ProductContainer, ProductTitle, SizeList } from './styles'
+import { Content, ProductContainer, ProductTitle } from './styles'
+import useProducts from '@/hooks/useProducts'
 
 export default function Product() {
-	const [name, setName] = useState('zapatilla hombre pelikan')
-	const [price, setPrice] = useState('$10.000')
-	const [size, setSize] = useState(5)
+	const { selectedProduct, loading } = useProducts()
 
+	if (loading || !selectedProduct) return <SkeletonLoader />
 	return (
 		<ProductContainer>
-			<ProductTitle>Hushpuppiesco / calzado / {name}</ProductTitle>
+			<ProductTitle>Hushpuppiesco / calzado / {selectedProduct.nombre}</ProductTitle>
 			<Content>
-				<Images>
-					<Imagen />
-
-					<Album>
-						{[...Array(15)].map((e, i) => (
-							<Mini key={i} />
-						))}
-					</Album>
-				</Images>
-
-				<Info>
-					<Data>
-						<span>{name}</span>
-						<span>{price}</span>
-						<span>Cod. de producto zap-005</span>
-					</Data>
-
-					<Section title='color'>
-						<Mini />
-					</Section>
-
-					<Section title='talla'>
-						<SizeList>
-							{[...Array(10)].map((e, i) => {
-								const thisSize = 5 + i * 0.5
-								return (
-									<Mini
-										key={i}
-										$selected={size === thisSize}
-										onClick={() => setSize(thisSize)}
-									>
-										{thisSize}
-									</Mini>
-								)
-							})}
-						</SizeList>
-					</Section>
-
-					<Guide>Guía de tallas</Guide>
-
-					<AddToCart>Añadir al carrito</AddToCart>
-				</Info>
+				<ProductImages />
+				<ProductInfo />
 			</Content>
+
 			<Details
 				title='detalles de producto'
 				text={constants.lorem}
@@ -68,7 +26,7 @@ export default function Product() {
 				text={constants.lorem2}
 			/>
 
-			<ProductList title='completá tu look' />
+			<ProductList title='completa tu look' />
 			<ProductList
 				title='productos recomendados'
 				recommended

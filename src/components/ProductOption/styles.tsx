@@ -1,51 +1,48 @@
 'use client'
 
-import styled from 'styled-components'
-
-export const Mini = styled.div`
-	height: 50px;
-	width: 70px;
-	background-color: grey;
-`
+import styled, { css } from 'styled-components'
 
 export const ImageList = styled.div`
 	display: flex;
 	gap: 5px;
+	margin-top: 5px;
 `
 
 export const ProductOptionContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 250px;
+	img {
+		object-fit: contain;
+		cursor: pointer;
+	}
 `
 
 export const Title = styled.span`
-	color: ${({ theme }) => theme.colors.text.darkerGrey};
 	font-weight: 500;
-	font-size: 16px;
 	text-align: center;
 	margin-bottom: 15px;
 	text-transform: capitalize;
-`
-
-export const Imagen = styled.div`
-	aspect-ratio: 4/3;
-	width: 100%;
-	background-color: grey;
-	margin-bottom: 5px;
+	${({ theme }) => css`
+		color: ${theme.colors.text.darkerGrey};
+		font-size: ${theme.fontSize.text};
+	`}
 `
 
 export const Price = styled.div`
-	color: ${({ theme }) => theme.colors.common.burgundy};
-	font-size: 20px;
 	font-weight: 500;
 	text-align: center;
 	margin-bottom: 15px;
+	${({ theme }) => css`
+		color: ${theme.colors.common.burgundy};
+		font-size: ${theme.fontSize.price};
+	`}
 `
 
 export const AddToCart = styled.button`
-	background-color: ${({ theme }) => theme.colors.common.burgundy};
+	height: 45px;
 	border: none;
+	background-color: ${({ theme }) => theme.colors.common.burgundy};
 	outline: none;
 	color: white;
 	font-weight: bold;
@@ -54,6 +51,13 @@ export const AddToCart = styled.button`
 	letter-spacing: 0.5px;
 	width: 100%;
 	cursor: pointer;
+`
+
+export const Added = styled(AddToCart)`
+	background-color: transparent;
+	color: ${({ theme }) => theme.colors.common.darkGrey};
+	border: 1px solid ${({ theme }) => theme.colors.common.darkGrey};
+	cursor: default;
 `
 
 export const Line = styled.span`

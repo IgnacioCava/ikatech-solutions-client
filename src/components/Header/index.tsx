@@ -1,3 +1,5 @@
+'use client'
+
 import useRoutes from '@/hooks/useRoutes'
 import { Advert, Contact, HeaderContainer } from './styles'
 import Link from 'next/link'

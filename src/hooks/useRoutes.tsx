@@ -1,9 +1,10 @@
+'use client'
+
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
 
 const useRoutes = () => {
 	const pathname = usePathname()
-	console.log(pathname)
 
 	const headerRoutes = useMemo(
 		() => [

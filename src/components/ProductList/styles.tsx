@@ -12,18 +12,12 @@ export const Products = styled.div`
 	justify-content: space-between;
 	gap: 20px;
 	flex-wrap: wrap;
-	/* display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 20px;
-	@media (max-width: 1000px) {
-		grid-template-columns: repeat(2, 1fr);
-	} */
 `
 
 export const Title = styled.span<{ $recommended?: boolean }>`
 	text-transform: uppercase;
 	margin-bottom: 5px;
-	font-size: 18px;
+	font-size: ${({ theme }) => theme.fontSize.sectionHeader};
 	font-weight: 500;
 	${({ $recommended, theme }) =>
 		$recommended
