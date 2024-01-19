@@ -32,6 +32,7 @@ export const ProductOption = ({ recommended, product }: ProductOptionProps) => {
 					return (
 						<Image
 							src={index === 0 ? product.foto : product.slides[random]}
+							key={index}
 							alt='producto'
 							width={70}
 							height={50}
