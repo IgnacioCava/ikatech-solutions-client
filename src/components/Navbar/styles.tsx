@@ -17,6 +17,9 @@ export const Functionalities = styled.div`
 	> p {
 		color: ${({ theme }) => theme.colors.common.burgundy};
 	}
+	> a {
+		font-weight: 500;
+	}
 `
 
 export const NavContainer = styled.nav`
@@ -25,7 +28,6 @@ export const NavContainer = styled.nav`
 	display: flex;
 	flex-direction: row;
 	border-bottom: 1px solid ${({ theme }) => theme.colors.common.grey};
-	//min-width: 1000px;
 	text-transform: uppercase;
 	justify-content: space-between;
 	position: sticky;

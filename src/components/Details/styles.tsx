@@ -1,14 +1,16 @@
 'use client'
 
 import { DarkGreyText } from '@/styles/commons'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Title = styled(DarkGreyText)`
-	font-size: 18px;
 	text-transform: uppercase;
 	margin-bottom: 10px;
 	padding-bottom: 5px;
-	border-bottom: 1px solid ${({ theme }) => theme.colors.common.grey};
+	${({ theme }) => css`
+		border-bottom: 1px solid ${theme.colors.common.grey};
+		font-size: ${theme.fontSize.sectionHeader};
+	`}
 `
 
 export const Text = styled.span`

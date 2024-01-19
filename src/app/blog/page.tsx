@@ -1,3 +1,5 @@
-export default function Test() {
-	return <div>esta es la pagina de testeo</div>
+import { NotImplemented } from '@components'
+
+export default function Blog() {
+	return <NotImplemented />
 }

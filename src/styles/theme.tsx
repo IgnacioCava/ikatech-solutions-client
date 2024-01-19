@@ -1,5 +1,16 @@
 const theme = {
+	fontSize: {
+		productTitle: '28px',
+		selectedPrice: '24px',
+		price: '20px',
+		sectionHeader: '18px',
+		text: '16px',
+		footerOption: '12px'
+	},
 	colors: {
+		loader: {
+			lightGrey: '#d8d8d8'
+		},
 		common: {
 			lightGrey: '#c8c6cb',
 			grey: '#95989a',

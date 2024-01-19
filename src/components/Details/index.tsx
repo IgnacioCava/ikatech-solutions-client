@@ -1,9 +1,5 @@
+import { DetailsProps } from '@/types/components'
 import { DetailsContainer, Title, Text } from './styles'
-
-interface DetailsProps {
-	title: string
-	text: string
-}
 
 export const Details = ({ title, text }: DetailsProps) => {
 	return (

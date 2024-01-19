@@ -1,8 +1,5 @@
+import { SearchbarProps } from '@/types/components'
 import { Chevron, Input, SearchbarContainer } from './styles'
-
-interface SearchbarProps {
-	placeholder: string
-}
 
 export const Searchbar = ({ placeholder }: SearchbarProps) => {
 	return (

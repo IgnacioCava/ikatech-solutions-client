@@ -5,6 +5,7 @@ import { useSelector as useReduxSelector, useDispatch as useReduxDispatch, type 
 /* Instruments */
 import { reducer } from './rootReducer'
 import { middleware } from './middleware'
+import { ReduxDispatch, ReduxState } from '@/types/redux'
 
 export const reduxStore = configureStore({
 	reducer,
@@ -14,9 +15,3 @@ export const reduxStore = configureStore({
 })
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>()
 export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector
-
-/* Types */
-export type ReduxStore = typeof reduxStore
-export type ReduxState = ReturnType<typeof reduxStore.getState>
-export type ReduxDispatch = typeof reduxStore.dispatch
-export type ReduxThunkAction<ReturnType = void> = ThunkAction<ReturnType, ReduxState, unknown, Action>

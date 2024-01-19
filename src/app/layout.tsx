@@ -1,5 +1,4 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { Providers } from '@/lib/providers'
 import '../styles/globals.css'
 import { LayoutContainer } from './styles'
@@ -20,4 +19,9 @@ export default function RootLayout(props: React.PropsWithChildren) {
 			</html>
 		</Providers>
 	)
+}
+
+export const metadata: Metadata = {
+	title: 'Hush Puppies',
+	description: '...'
 }

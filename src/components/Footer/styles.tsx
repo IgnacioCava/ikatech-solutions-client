@@ -1,11 +1,6 @@
 'use client'
 
-import styled, { css } from 'styled-components'
-
-export const Email = styled.div`
-	margin-top: 15px;
-	width: 100%;
-`
+import styled from 'styled-components'
 
 export const Sponsors = styled.div`
 	position: relative;
@@ -17,34 +12,6 @@ export const Sponsors = styled.div`
 		object-fit: contain;
 		object-position: center;
 	}
-`
-
-export const Section = styled.div`
-	display: flex;
-	flex-direction: column;
-`
-
-export const SectionTitle = styled.span`
-	font-weight: 500;
-	margin-bottom: 15px;
-	font-size: 1.2rem;
-`
-export const Options = styled.div<{ $type: string }>`
-	display: flex;
-	flex-direction: column;
-	gap: 0.8rem;
-	text-transform: uppercase;
-	font-size: 0.8rem;
-	${(props) =>
-		props.$type != 'Newsletter' &&
-		css`
-			> span {
-				cursor: pointer;
-				&:hover {
-					color: grey;
-				}
-			}
-		`}
 `
 
 export const HandleText = styled.span`
@@ -90,4 +57,7 @@ export const Socials = styled.div`
 	flex-direction: row;
 	gap: 15px;
 	margin-block: 10px 15px;
+	> img {
+		cursor: pointer;
+	}
 `
